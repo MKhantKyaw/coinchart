@@ -1,0 +1,48 @@
+@use '../../styles/variables';
+
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 40px;
+
+    @media(min-width: variables.$breakpoint_tablet) {
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .menu {
+        @media(min-width: variables.$breakpoint_tablet) {
+            display: none;
+        }
+    }
+
+    .title {
+        font-size: 30px;
+        font-weight: 800;
+        color: variables.$primary_color;
+        justify-self: start;
+        cursor: pointer;
+    }
+
+    .navitems {
+        display: none;
+
+        @media(min-width: variables.$breakpoint_tablet) {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        li {
+            list-style: none;
+            cursor: pointer
+        }
+
+    }
+
+    .icon {
+        cursor: pointer;
+    }
+}

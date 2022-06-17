@@ -1,0 +1,59 @@
+@use '../../styles/variables';
+
+.sidebar {
+    height: 100vh;
+    width: 300px;
+    position: absolute;
+    background-color: variables.$primary_color;
+
+    @media(min-width: variables.$breakpoint_tablet) {
+        left: -300px;
+    }
+
+    &.show {
+        left: 0;
+        transition: 0.5s ease-in-out;
+    }
+
+    &.hide {
+        left: -300px;
+        transition: 0.5s ease-in-out;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin: 60px 20px;
+
+        li {
+            list-style: none;
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #276efd;
+            }
+        }
+
+        .icon {
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+        }
+    }
+
+    .close {
+        color: #fff;
+        height: 30px;
+        width: 30px;
+        position: relative;
+        top: 20px;
+        left: 250px;
+        cursor: pointer;
+
+
+    }
+
+}
