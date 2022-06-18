@@ -1,0 +1,52 @@
+@use "../../styles/variables";
+
+
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px 40px;
+        border-radius: 10px;
+        border: 1px solid rgba(128, 128, 128, 0.477);
+        transition: all 0.5s;
+
+        &:hover {
+            transform: translateX(0px) translateY(-10px);
+            border: 1.5px solid variables.$primary_color;
+        }
+
+        .coinbase {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .meta,
+        .binance {
+            width: 150px;
+            height: 150px;
+            object-fit: covers;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        .icon {
+            cursor: pointer;
+            height: 30px;
+            width: 30px;
+        }
+    }
+}

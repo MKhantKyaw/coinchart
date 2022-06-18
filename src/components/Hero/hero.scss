@@ -1,0 +1,26 @@
+@use '../../styles/variables';
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 40px;
+
+    .title {
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        margin: 30px;
+
+        @media(min-width: variables.$breakpoint_mobile) {
+            font-size: 40px;
+            margin: 30px 40px;
+        }
+
+        @media(min-width: variables.$breakpoint_tablet) {
+            font-size: 50px;
+            margin: 30px 60px;
+        }
+    }
+}
