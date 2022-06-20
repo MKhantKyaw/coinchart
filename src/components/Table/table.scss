@@ -1,0 +1,127 @@
+@use '../../styles/variables';
+
+.table {
+
+    display: flex;
+    justify-content: center;
+    margin: 0 30px 100px 30px;
+    width: 80%;
+    max-width: 800px;
+    min-width: 200px;
+    border: variables.$primary_border;
+    border-radius: 10px;
+    padding: 0 10px;
+
+    table {
+        width: 100%;
+        border-spacing: 0;
+
+        thead {
+
+            @media(max-width: variables.$breakpoint_tablet) {
+                display: none;
+            }
+        }
+
+        tbody {
+            tr {
+                border: none;
+
+                &:hover {
+                    background-color: rgba(235, 235, 235, 0.399);
+                    cursor: pointer;
+                }
+
+            }
+        }
+
+        .priceChange {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+            border-radius: 5px;
+
+            .icon {
+                width: 15px;
+                height: 15px;
+
+                @media(min-width: variables.$breakpoint_mobile) {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            &.rise {
+                color: green;
+                background-color: rgba(0, 128, 0, 0.151);
+            }
+
+            &.decline {
+                color: red;
+                background-color: rgb(255, 234, 234);
+            }
+        }
+
+        th {
+            padding: 15px 8px;
+            text-align: left;
+            color: rgb(151, 151, 151);
+
+        }
+
+        td {
+            border: none;
+            padding: 15px 8px;
+            text-align: left;
+            font-size: 12px;
+            font-weight: 600;
+
+            @media(min-width: variables.$breakpoint_mobile) {
+                font-size: 15px;
+            }
+
+            .status {
+                text-align: center;
+            }
+
+            .coinName {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+
+
+                span {
+                    display: none;
+
+                    @media(min-width: variables.$breakpoint_mobile) {
+                        display: inline;
+                    }
+                }
+            }
+
+        }
+
+
+
+        img {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            object-fit: cover;
+
+            @media(min-width: variables.$breakpoint_mobile) {
+                width: 30px;
+                height: 30px;
+            }
+
+            @media(min-width: variables.$breakpoint_tablet) {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+
+
+}

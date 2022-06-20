@@ -1,32 +1,66 @@
 import Cards from '../Cards/Cards';
+import Table from '../Table/Table';
 import './hero.scss'
 
 const data = [
     {
         rank: 1,
-        icon: "https://api.coin-stats.com/api/files/812fde17aea65fbb9f1fd8a478547bde/f3738cc5df5f59afb57111d67d951170_1.png",
+        icon: "https://static.coinstats.app/coins/1650455588819.png",
         name: 'Bitcoin',
         symbol: 'BTC',
+        price: '25000$',
         priceChange1d: -0.56,
         priceChange1w: -1.07,
     },
     {
         rank: 2,
-        icon: "https://api.coin-stats.com/api/files/812fde17aea65fbb9f1fd8a478547bde/f3738cc5df5f59afb57111d67d951170_1.png",
+        icon: "https://static.coinstats.app/coins/1650455588819.png",
         name: 'Bitcoin',
         symbol: 'BTC',
+        price: '25000$',
         priceChange1d: -0.56,
         priceChange1w: -1.07,
     },
     {
         rank: 3,
-        icon: "https://api.coin-stats.com/api/files/812fde17aea65fbb9f1fd8a478547bde/f3738cc5df5f59afb57111d67d951170_1.png",
+        icon: "https://static.coinstats.app/coins/1650455588819.png",
         name: 'Bitcoin',
         symbol: 'BTC',
-        priceChange1d: -0.56,
+        price: '25000$',
+        priceChange1d: 0.56,
+        priceChange1w: -1.07,
+    },
+    {
+        rank: 3,
+        icon: "https://static.coinstats.app/coins/1650455588819.png",
+        name: 'Bitcoin',
+        symbol: 'BTC',
+        price: '25000$',
+        priceChange1d: 0.56,
+        priceChange1w: -1.07,
+    },
+    {
+        rank: 3,
+        icon: "https://static.coinstats.app/coins/1650455588819.png",
+        name: 'Bitcoin',
+        symbol: 'BTC',
+        price: '25000$',
+        priceChange1d: 0.56,
+        priceChange1w: -1.07,
+    },
+    {
+        rank: 3,
+        icon: "https://static.coinstats.app/coins/1650455588819.png",
+        name: 'Bitcoin',
+        symbol: 'BTC',
+        price: '25000$',
+        priceChange1d: 0.56,
         priceChange1w: -1.07,
     },
 ]
+
+const header = ["Rank", "Name", "Price", "24h Change"]
+
 const Hero = () => {
     return (
         <div className="hero">
@@ -35,7 +69,7 @@ const Hero = () => {
             </div>
             <Cards />
             <div className="title">Top Ranking Coins</div>
-
+            <Table header={header} data={data} />
         </div>
     );
 }

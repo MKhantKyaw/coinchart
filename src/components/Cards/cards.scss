@@ -17,7 +17,7 @@
         gap: 20px;
         padding: 20px 40px;
         border-radius: 10px;
-        border: 1px solid rgba(128, 128, 128, 0.477);
+        border: variables.$primary_border;
         transition: all 0.5s;
 
         &:hover {
@@ -26,17 +26,18 @@
         }
 
         .coinbase {
-            width: 150px;
-            height: 150px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
         }
 
         .meta,
         .binance {
-            width: 150px;
-            height: 150px;
-            object-fit: covers;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+
         }
 
         p {
