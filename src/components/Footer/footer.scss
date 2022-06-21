@@ -1,0 +1,96 @@
+@use '../../styles/variables' as var;
+
+@mixin titleStyle($size) {
+    font-size: $size;
+    color: var.$footer_text;
+    font-weight: bold;
+    text-align: center;
+}
+
+@mixin buttonStyle {
+    padding: 8px 25px;
+    outline: none;
+    color: #fff;
+    border: none;
+    background-color: var.$primary_color;
+    border-radius: 5px;
+}
+
+
+.footer {
+    margin-top: 40px;
+    padding: 30px 30px 0 30px;
+    background-color: #f2f2f2;
+
+    .top {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .title {
+            @include titleStyle(28px);
+        }
+
+        .iconGroup {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            gap: 50px;
+
+            .icon {
+                width: 25px;
+                height: 25px;
+                color: var.$footer_text;
+                cursor: pointer;
+                transition: 0.5s;
+
+                &:hover {
+                    color: var.$primary_color;
+                }
+            }
+        }
+    }
+
+
+    .bottom {
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        .title {
+            @include titleStyle(36px);
+        }
+
+        .form {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            max-width: 400px;
+            min-width: 200px;
+            width: 100%;
+
+            input {
+                width: 100%;
+
+                height: 20px;
+                padding: 10px;
+                background-color: #fff;
+                border: none;
+            }
+
+            button {
+                @include buttonStyle();
+            }
+        }
+    }
+
+    p {
+        margin-top: 45px;
+        text-align: center;
+        font-size: 14px;
+        color: var.$footer_text;
+    }
+}

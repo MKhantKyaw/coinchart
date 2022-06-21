@@ -20,12 +20,12 @@ const Table = ({ header, data }) => {
                                 <div className="coinName">
                                     <img src={row.icon} alt="" />
                                     <p>{row.name}</p>
-                                    <span>{"  .  " + row.symbol}</span>
+                                    <span>{" " + row.symbol}</span>
                                 </div>
 
                             </td>
-                            <td style={{ width: "25%" }}>{row.price}</td>
-                            <td style={{ width: "25%" }} >
+                            <td style={{ width: "30%" }}>{row.price}</td>
+                            <td style={{ width: "20%" }} >
                                 <div className={`priceChange ${row.priceChange1d < 0 ? "decline" : "rise"}`}>
                                     {row.priceChange1d < 0 ? <ArrowDropUp className="icon" /> : <ArrowDropDown className="icon" />}
                                     <div className="status">

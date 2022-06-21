@@ -70,6 +70,7 @@ const Hero = () => {
             <Cards />
             <div className="title">Top Ranking Coins</div>
             <Table header={header} data={data} />
+            <button>See More</button>
         </div>
     );
 }

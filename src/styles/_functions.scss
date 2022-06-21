@@ -1,0 +1,12 @@
+@use './variables';
+
+@mixin big_button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: variables.$secondary_text;
+    border: variables.$primary_border;
+    outline: none;
+    cursor: pointer;
+}
