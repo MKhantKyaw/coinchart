@@ -1,0 +1,25 @@
+@use '../../styles/variables' as var;
+
+.tab {
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+
+        .link {
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .active {
+            border-bottom: 3px solid var.$primary_color;
+            color: #000;
+        }
+
+        .not_active {
+            color: var.$secondary_text;
+        }
+    }
+}

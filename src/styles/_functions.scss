@@ -10,3 +10,21 @@
     outline: none;
     cursor: pointer;
 }
+
+@mixin title($fsize) {
+    font-size: $fsize;
+    font-weight: bold;
+    text-align: center;
+    margin: 30px;
+
+    @media(min-width: variables.$breakpoint_mobile) {
+        font-size: calc($fsize + 10px);
+        margin: 30px 40px;
+    }
+
+    @media(min-width: variables.$breakpoint_tablet) {
+        font-size: calc($fsize + 20px);
+        margin: 30px 60px;
+    }
+
+}

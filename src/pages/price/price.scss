@@ -1,0 +1,36 @@
+@use '../../styles/variables' as var;
+@use '../../styles/functions' as f;
+
+.price {
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .top {
+
+        .title {
+
+            @include f.title(25px);
+        }
+
+        .letter {
+            margin: 0 50px;
+            color: var.$secondary_text;
+            text-align: justify;
+            font-weight: 600;
+
+            @media(min-width: var.$breakpoint_mobile) {
+                margin: 0 100px;
+            }
+
+            @media(min-width: var.$breakpoint_tablet) {
+                margin: 0 250px;
+            }
+        }
+    }
+
+    .bottom {
+        margin: 20px 10%;
+    }
+}
