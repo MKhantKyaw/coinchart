@@ -1,0 +1,42 @@
+@use '../../styles/variables' as var;
+@use '../../styles/functions' as f;
+
+.stats {
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+
+    @media (min-width: 900px) {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+        border-radius: 10px;
+        padding: 20px;
+        border: var.$primary_border;
+
+        .name {
+            color: var.$secondary_text;
+            font-size: 16px;
+            padding: 5px;
+        }
+
+        .amount {
+            font-size: clamp(18px, 2.4vw, 1.3rem);
+            font-weight: bold;
+        }
+
+        .icon {
+            padding: 5px;
+        }
+    }
+
+
+}

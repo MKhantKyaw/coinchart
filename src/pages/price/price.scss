@@ -8,6 +8,8 @@
     gap: 30px;
 
     .top {
+        display: flex;
+        flex-direction: column;
 
         .title {
 
@@ -15,19 +17,17 @@
         }
 
         .letter {
-            margin: 0 50px;
+            margin: 0px 30px;
+            text-align: center;
             color: var.$secondary_text;
             text-align: justify;
             font-weight: 600;
-
-            @media(min-width: var.$breakpoint_mobile) {
-                margin: 0 100px;
-            }
-
-            @media(min-width: var.$breakpoint_tablet) {
-                margin: 0 250px;
-            }
+            margin: auto;
+            width: max(200px + 10%, 70%);
         }
+
+
+
     }
 
     .bottom {

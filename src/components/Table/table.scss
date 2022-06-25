@@ -54,12 +54,12 @@
 
             &.rise {
                 color: green;
-                background-color: rgba(0, 128, 0, 0.151);
+                background-color: variables.$success;
             }
 
             &.decline {
                 color: red;
-                background-color: rgb(255, 234, 234);
+                background-color: variables.$fail;
             }
         }
 
