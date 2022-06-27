@@ -4,6 +4,7 @@ import './styles/global.scss'
 import Home from "./pages/Home";
 import Price from "./pages/price/Price";
 import News from "./pages/News";
+import Footer from './components/Footer/Footer'
 
 const App = () => {
     return (
@@ -18,6 +19,7 @@ const App = () => {
                         <Route path="news" element={<News />} />
                     </Route>
                 </Routes>
+                <Footer />
             </BrowserRouter>
         </div>
 

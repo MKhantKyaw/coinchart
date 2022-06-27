@@ -1,0 +1,157 @@
+@use '../../styles/functions' as f;
+@use '../../styles/variables' as var;
+
+
+@mixin columnHide {
+    @media (max-width: var.$breakpoint_tablet) {
+        display: none;
+    }
+}
+
+.datatable {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    width: 80%;
+    max-width: 1200px;
+    min-width: 200px;
+    border: var.$primary_border;
+    border-radius: 10px;
+    padding: 0 10px;
+
+    table {
+        width: 100%;
+        border-spacing: 0;
+
+
+        thead {
+            th {
+                padding: 15px 8px;
+                text-align: left;
+                color: var.$secondary_text;
+                font-size: clamp(12px, 3vw, 14px);
+            }
+        }
+
+        tbody {
+            tr {
+                border: none;
+
+                &:hover {
+                    background-color: rgba(235, 235, 235, 0.399);
+                    cursor: pointer;
+                }
+
+
+
+                td {
+                    border: none;
+                    padding: 15px 8px;
+                    text-align: left;
+                    font-size: clamp(12px, 1vw, 1.2rem);
+                    font-weight: 600;
+
+                    .coinName {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+
+
+
+                        span {
+                            display: none;
+
+                            @media(min-width: var.$breakpoint_mobile) {
+                                display: inline;
+                                color: rgb(151, 151, 151);
+                                font-size: 14px;
+                            }
+                        }
+                    }
+
+                    .priceChange {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 5px;
+                        border-radius: 5px;
+
+                        .icon {
+                            width: 15px;
+                            height: 15px;
+
+                            @media(min-width: var.$breakpoint_mobile) {
+                                width: 20px;
+                                height: 20px;
+                            }
+                        }
+
+                        &.rise {
+                            color: green;
+                            background-color: var.$success;
+                        }
+
+                        &.decline {
+                            color: red;
+                            background-color: var.$fail;
+                        }
+                    }
+                }
+
+
+            }
+        }
+
+        td:nth-child(1) {
+            width: 5%; // rank
+        }
+
+        td:nth-child(2) {
+            width: 25%; // name
+        }
+
+        td:nth-child(3) {
+            width: 15%; // price
+        }
+
+        td:nth-child(4) {
+            width: 10%; // change
+        }
+
+        th:nth-child(5),
+        td:nth-child(5) {
+            width: 15%; // btc
+            @include columnHide();
+        }
+
+        th:nth-child(6),
+        td:nth-child(6) {
+            width: 15%; // market
+            @include columnHide()
+        }
+
+        th:nth-child(7),
+        td:nth-child(7) {
+            width: 15%; // volume
+            @include columnHide()
+        }
+
+        img {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            object-fit: cover;
+
+            @media(min-width: var.$breakpoint_mobile) {
+                width: 30px;
+                height: 30px;
+            }
+
+            @media(min-width: var.$breakpoint_tablet) {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+
+}

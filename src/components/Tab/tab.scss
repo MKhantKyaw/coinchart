@@ -1,6 +1,8 @@
 @use '../../styles/variables' as var;
 
 .tab {
+    margin: 0 40px;
+
     ul {
         display: flex;
         align-items: center;

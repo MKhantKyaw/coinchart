@@ -1,6 +1,7 @@
 import Tab from '../../components/Tab/Tab';
 import './price.scss'
 import Stats from '../../components/Stats/Stats';
+import DataTable from '../../components/DataTable/DataTable';
 
 const Price = () => {
     return (
@@ -13,9 +14,9 @@ const Price = () => {
                 <div className="letter">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusamus, modi esse, neque nostrum amet est praesentium recusandae molestiae veritatis sunt corporis atque? Cupiditate deleniti obcaecati, doloribus quibusdam maxime quidem.</div>
                 <Stats />
             </div>
-            <div className="bottom">
-                <Tab />
-            </div>
+            <Tab />
+            <DataTable />
+
         </div>
     );
 }
