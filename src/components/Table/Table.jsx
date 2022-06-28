@@ -1,7 +1,10 @@
 import './table.scss'
 import { ArrowDropUp, ArrowDropDown } from '@mui/icons-material'
 
-const Table = ({ header, data }) => {
+const Table = ({ header, data, loading }) => {
+    if (loading) {
+        return (<div>loading</div>)
+    }
     return (
         <div className="table">
             <table>
@@ -13,7 +16,7 @@ const Table = ({ header, data }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {data.map((row, index) => (
+                    {data.coins.map((row, index) => (
                         <tr key={index}>
                             <td style={{ width: "10%" }}>{row.rank}</td>
                             <td style={{ width: "40%%" }} >
@@ -24,10 +27,10 @@ const Table = ({ header, data }) => {
                                 </div>
 
                             </td>
-                            <td style={{ width: "30%" }}>{row.price}</td>
+                            <td style={{ width: "30%" }}>${row.price.toFixed(2)}</td>
                             <td style={{ width: "20%" }} >
                                 <div className={`priceChange ${row.priceChange1d < 0 ? "decline" : "rise"}`}>
-                                    {row.priceChange1d < 0 ? <ArrowDropUp className="icon" /> : <ArrowDropDown className="icon" />}
+                                    {row.priceChange1d < 0 ? <ArrowDropDown className="icon" /> : <ArrowDropUp className="icon" />}
                                     <div className="status">
                                         {row.priceChange1d + "%"}
                                     </div>

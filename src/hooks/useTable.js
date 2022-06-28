@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const calculateRange = (data, rowsPerPage) => {
     const range = [];
     const num = Math.ceil(data.length / rowsPerPage);
-    for (let i = 1; i < num; i++) {
+    for (let i = 1; i <= num; i++) {
         range.push(i);
     }
     return range;
@@ -23,7 +23,7 @@ const useTable = (data, page, rowsPerPage) => {
 
         const slice = sliceData(data, page, rowsPerPage);
         setSlice([...slice]);
-    }, [data, setTableRange, page, setSlice]);
+    }, [data, setTableRange, page, setSlice, rowsPerPage]);
 
     return { slice, range: tableRange };
 }

@@ -1,67 +1,14 @@
+import useFetch from '../../hooks/useFetch';
 import Cards from '../Cards/Cards';
 import Table from '../Table/Table';
 import './hero.scss'
 
-const data = [
-    {
-        rank: 1,
-        icon: "https://static.coinstats.app/coins/1650455588819.png",
-        name: 'Bitcoin',
-        symbol: 'BTC',
-        price: '25000$',
-        priceChange1d: -0.56,
-        priceChange1w: -1.07,
-    },
-    {
-        rank: 2,
-        icon: "https://static.coinstats.app/coins/1650455588819.png",
-        name: 'Bitcoin',
-        symbol: 'BTC',
-        price: '25000$',
-        priceChange1d: -0.56,
-        priceChange1w: -1.07,
-    },
-    {
-        rank: 3,
-        icon: "https://static.coinstats.app/coins/1650455588819.png",
-        name: 'Bitcoin',
-        symbol: 'BTC',
-        price: '25000$',
-        priceChange1d: 0.56,
-        priceChange1w: -1.07,
-    },
-    {
-        rank: 3,
-        icon: "https://static.coinstats.app/coins/1650455588819.png",
-        name: 'Bitcoin',
-        symbol: 'BTC',
-        price: '25000$',
-        priceChange1d: 0.56,
-        priceChange1w: -1.07,
-    },
-    {
-        rank: 3,
-        icon: "https://static.coinstats.app/coins/1650455588819.png",
-        name: 'Bitcoin',
-        symbol: 'BTC',
-        price: '25000$',
-        priceChange1d: 0.56,
-        priceChange1w: -1.07,
-    },
-    {
-        rank: 3,
-        icon: "https://static.coinstats.app/coins/1650455588819.png",
-        name: 'Bitcoin',
-        symbol: 'BTC',
-        price: '25000$',
-        priceChange1d: 0.56,
-        priceChange1w: -1.07,
-    },
-]
 
 const header = ["Rank", "Name", "Price", "24h Change"]
 
 const Hero = () => {
+    const url = 'https://api.coinstats.app/public/v1/coins?skip=0&limit=5';
+    const { data, loading } = useFetch(url)
     return (
         <div className="hero">
             <div className="title">
@@ -69,7 +16,7 @@ const Hero = () => {
             </div>
             <Cards />
             <div className="title">Top Ranking Coins</div>
-            <Table header={header} data={data} />
+            <Table header={header} data={data} loading={loading} />
             <button>See More</button>
         </div>
     );

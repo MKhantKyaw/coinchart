@@ -2,92 +2,20 @@ import { ArrowDropDown, ArrowDropUp } from '@mui/icons-material';
 import millify from 'millify';
 import { useState } from 'react';
 import useTable from '../../hooks/useTable';
+import TableFooter from '../TableFooter/TableFooter';
 import './datatable.scss'
 
 
-const data = [
-    {
-        rank: 1,
-        icon: "https://static.coinstats.app/coins/1650455588819.png",
-        name: 'Bitcoin',
-        symbol: 'BTC',
-        price: '25000$',
-        priceBtc: 1,
-        marketcap: '11000000$',
-        volume: '11000000$',
-        priceChange1d: -0.56,
-        priceChange1w: -1.07,
-    },
-    {
-        rank: 2,
-        icon: "https://static.coinstats.app/coins/1650455588819.png",
-        name: 'Bitcoin',
-        symbol: 'BTC',
-        price: '25000$',
-        priceBtc: 1,
-        marketcap: '11000000$',
-        volume: '11000000$',
-        priceChange1d: -0.56,
-        priceChange1w: -1.07,
-    },
-    {
-        rank: 3,
-        icon: "https://static.coinstats.app/coins/1650455588819.png",
-        name: 'Bitcoin',
-        symbol: 'BTC',
-        price: '25000$',
-        priceBtc: 1,
-        marketcap: '11000000$',
-        volume: '11000000$',
-        priceChange1d: 0.56,
-        priceChange1w: -1.07,
-    },
-    {
-        rank: 3,
-        icon: "https://static.coinstats.app/coins/1650455588819.png",
-        name: 'Bitcoin',
-        symbol: 'BTC',
-        price: '25000$',
-        priceBtc: 1,
-        marketcap: '11000000$',
-        volume: '11000000$',
-        priceChange1d: 0.56,
-        priceChange1w: -1.07,
-    },
-    {
-        rank: 3,
-        icon: "https://static.coinstats.app/coins/1650455588819.png",
-        name: 'Bitcoin',
-        symbol: 'BTC',
-        price: '25000$',
-        priceBtc: 1,
-        marketcap: '11000000$',
-        volume: '11000000$',
-        priceChange1d: 0.56,
-        priceChange1w: -1.07,
-    },
-    {
-        rank: 3,
-        icon: "https://static.coinstats.app/coins/1650455588819.png",
-        name: 'Bitcoin',
-        symbol: 'BTC',
-        price: '25000$',
-        priceBtc: 1,
-        marketcap: '11000000$',
-        volume: '11000000$',
-        priceChange1d: 0.56,
-        priceChange1w: -1.07,
-    },
-]
 
 const header = ["#", "Name", "Price", "Change (24h)", "Price in BTC", "Market Cap", "Volume"]
 
-const DataTable = () => {
+const DataTable = ({ data, loading }) => {
     const [page, setPage] = useState(1);
-    const [rowsPerPage, setRowsPerPage] = useState(3);
-    const { slice, range } = useTable(data, page, rowsPerPage);
-
+    const [rowsPerPage, setRowsPerPage] = useState(20);
+    const { slice, range } = useTable(data.coins, page, rowsPerPage);
+    console.log(slice)
     return (
+        slice &&
         <div className="datatable">
             <table>
                 <thead>
@@ -99,7 +27,7 @@ const DataTable = () => {
                 </thead>
 
                 <tbody>
-                    {data.map((row, index) => (
+                    {slice.map((row, index) => (
                         <tr key={index}>
                             <td>{row.rank}</td>
                             <td>
@@ -110,7 +38,7 @@ const DataTable = () => {
                                 </div>
 
                             </td>
-                            <td>{row.price}</td>
+                            <td>${row.price.toFixed(2)}</td>
                             <td>
                                 <div className={`priceChange ${row.priceChange1d < 0 ? "decline" : "rise"}`}>
                                     {row.priceChange1d < 0 ? <ArrowDropUp className="icon" /> : <ArrowDropDown className="icon" />}
@@ -120,17 +48,19 @@ const DataTable = () => {
                                 </div>
 
                             </td>
-                            <td>{row.priceBtc}</td>
-                            <td>{millify(row.marketcap)}</td>
-                            <td>{millify(row.volume)}</td>
+                            <td>{row.priceBtc.toFixed(4)}</td>
+                            <td>{row.marketCap === null ? "" : millify(row.marketCap)}</td>
+                            <td>{row.volume === null ? "" : millify(row.volume)}</td>
 
 
                         </tr>
                     ))}
                 </tbody>
             </table>
+            <TableFooter range={range} slice={slice} setPage={setPage} page={page} />
         </div>
-    );
+
+    )
 }
 
 export default DataTable;
