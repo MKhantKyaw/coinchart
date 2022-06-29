@@ -1,8 +1,14 @@
 import { Brightness5Outlined, DarkModeOutlined, Close } from '@mui/icons-material';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { DarkModeContext } from '../../context/darkModeContext';
+import { SidebarContext } from '../../context/sidebarContext';
 import './sidebar.scss'
 
-const Sidebar = ({ dark, handleDark, sidebar, handleSidebar }) => {
+const Sidebar = () => {
+
+    const { handleSidebar, sidebar } = useContext(SidebarContext)
+    const { dark, toggleTheme } = useContext(DarkModeContext)
 
     return (
         <div className={`sidebar ${sidebar ? "show" : "hide"}`}>
@@ -13,8 +19,8 @@ const Sidebar = ({ dark, handleDark, sidebar, handleSidebar }) => {
                 <Link to="/news" style={{ textDecoration: 'none' }}><li>News</li></Link>
                 {
                     dark ?
-                        <Brightness5Outlined onClick={handleDark} className="icon" /> :
-                        <DarkModeOutlined onClick={handleDark} className="icon" />
+                        <Brightness5Outlined onClick={toggleTheme} className="icon" /> :
+                        <DarkModeOutlined onClick={toggleTheme} className="icon" />
 
                 }
             </ul>

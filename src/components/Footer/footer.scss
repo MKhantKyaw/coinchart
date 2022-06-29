@@ -2,25 +2,29 @@
 
 @mixin titleStyle($size) {
     font-size: $size;
-    color: var.$footer_text;
+    color: #f5f5f5;
     font-weight: bold;
     text-align: center;
 }
 
 @mixin buttonStyle {
-    padding: 8px 25px;
+    height: 40px;
+    width: 100px;
     outline: none;
-    color: #fff;
+    color: var.$primary_color;
+    font-weight: bold;
     border: none;
-    background-color: var.$primary_color;
+    text-align: center;
+    background-color: #fff;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 
 .footer {
-    margin-top: 40px;
+    margin-top: auto;
     padding: 30px 30px 0 30px;
-    background-color: #f2f2f2;
+    background-color: var.$primary_color;
 
     .top {
         display: flex;
@@ -41,13 +45,8 @@
             .icon {
                 width: 25px;
                 height: 25px;
-                color: var.$footer_text;
+                color: #f5f5f5;
                 cursor: pointer;
-                transition: 0.5s;
-
-                &:hover {
-                    color: var.$primary_color;
-                }
             }
         }
     }

@@ -13,6 +13,8 @@
     }
 
     .menu {
+        cursor: pointer;
+
         @media(min-width: variables.$breakpoint_tablet) {
             display: none;
         }

@@ -16,6 +16,7 @@
         font-weight: bold;
         border-radius: 50%;
         transition: 0.5s;
+        cursor: pointer;
 
         &.active {
             background-color: var.$primary_color;

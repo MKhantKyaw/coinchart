@@ -1,28 +1,25 @@
 import { Brightness5Outlined, DarkModeOutlined, Menu } from '@mui/icons-material';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 import { Link, useLocation } from 'react-router-dom';
 import './navbar.scss'
+import { DarkModeContext } from '../../context/darkModeContext';
+import { SidebarContext } from '../../context/sidebarContext';
 
 const Navbar = () => {
-    const [dark, setDark] = useState(true)
-    const [sidebar, setSidebar] = useState(false)
-    const location = useLocation()
-    const handleDark = () => {
-        setDark(!dark)
-    }
 
-    const handleSidebar = () => {
-        setSidebar(!sidebar)
-    }
+    const { toggleTheme, dark } = useContext(DarkModeContext)
+    const { handleSidebar, setSidebar } = useContext(SidebarContext)
+    const location = useLocation()
 
     useEffect(() => {
         setSidebar(false)
+        // eslint-disable-next-line 
     }, [location])
 
     return (
         <>
-            <Sidebar dark={dark} handleDark={handleDark} handleSidebar={handleSidebar} sidebar={sidebar} />
+            <Sidebar />
             <div className="navbar">
                 <Menu className="menu" onClick={handleSidebar} />
                 <div className="title">coinchart</div>
@@ -33,8 +30,8 @@ const Navbar = () => {
                     <div className="icon">
                         {
                             dark ?
-                                <Brightness5Outlined onClick={handleDark} /> :
-                                <DarkModeOutlined onClick={handleDark} />
+                                <Brightness5Outlined onClick={toggleTheme} /> :
+                                <DarkModeOutlined onClick={toggleTheme} />
 
                         }
                     </div>

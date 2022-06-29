@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import Cards from '../Cards/Cards';
 import Table from '../Table/Table';
@@ -17,7 +18,7 @@ const Hero = () => {
             <Cards />
             <div className="title">Top Ranking Coins</div>
             <Table header={header} data={data} loading={loading} />
-            <button>See More</button>
+            <Link to="/price"><button>See More</button></Link>
         </div>
     );
 }
