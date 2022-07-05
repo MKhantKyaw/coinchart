@@ -1,4 +1,3 @@
-import Tab from '../../components/Tab/Tab';
 import './price.scss'
 import Stats from '../../components/Stats/Stats';
 import DataTable from '../../components/DataTable/DataTable';
@@ -7,9 +6,10 @@ import { SpinnerDotted } from 'spinners-react/lib/esm/SpinnerDotted';
 import { useRef } from 'react';
 
 const Price = () => {
-    const url = "https://api.coinstats.app/public/v1/coins?skip=0&limit=100";
-    const { data, loading } = useFetch(url)
+
     const scroll = useRef(null)
+    const url = process.env.REACT_APP_URL + "&limit=100"
+    const { data, loading } = useFetch(url)
 
     if (loading) return (
         <div className="price">
@@ -26,7 +26,8 @@ const Price = () => {
                 <div className="letter">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusamus, modi esse, neque nostrum amet est praesentium recusandae molestiae veritatis sunt corporis atque? Cupiditate deleniti obcaecati, doloribus quibusdam maxime quidem.</div>
                 <Stats data={data} />
             </div>
-            <Tab />
+            {/* <Tab /> */}
+            <div className="currency">Currencies</div>
             <DataTable data={data} scroll={scroll} />
 
         </div>

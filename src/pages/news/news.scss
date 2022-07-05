@@ -1,0 +1,15 @@
+@use '../../styles/functions' as f;
+@use '../../styles/variables' as var;
+
+.news {
+    margin-top: 10px;
+
+    .sections {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 20px max(30px, 10%);
+        gap: 30px;
+    }
+
+}

@@ -42,7 +42,7 @@ const DataTable = ({ data, scroll }) => {
                                 <td>${row.price.toFixed(2)}</td>
                                 <td>
                                     <div className={`priceChange ${row.priceChange1d < 0 ? "decline" : "rise"}`}>
-                                        {row.priceChange1d < 0 ? <ArrowDropUp className="icon" /> : <ArrowDropDown className="icon" />}
+                                        {row.priceChange1d < 0 ? <ArrowDropDown className="icon" /> : <ArrowDropUp className="icon" />}
                                         <div className="status">
                                             {row.priceChange1d + "%"}
                                         </div>

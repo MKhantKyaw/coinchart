@@ -28,3 +28,8 @@
     }
 
 }
+
+@mixin newstitle {
+    font-size: clamp(18px, 3vw, 1.5rem);
+    font-weight: bold;
+}

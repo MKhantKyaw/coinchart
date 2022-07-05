@@ -5,8 +5,9 @@ const Tab = () => {
     return (
         <div className="tab">
             <ul>
-                <NavLink to="/price" className={({ isActive }) => (isActive ? "active link" : "not_active link")}>Price</NavLink>
-                <NavLink to="/favourites" className={({ isActive }) => (isActive ? "active link" : "not_active link")}>Favourites</NavLink>
+                <NavLink to="/news" end className={({ isActive }) => (isActive ? "active link" : "not_active link")}>Featured</NavLink>
+                <NavLink to="/news/latest" className={({ isActive }) => (isActive ? "active link" : "not_active link")}>Latest</NavLink>
+                <NavLink to="/news/ trending" className={({ isActive }) => (isActive ? "active link" : "not_active link")}>Trending</NavLink>
             </ul>
         </div>
     );

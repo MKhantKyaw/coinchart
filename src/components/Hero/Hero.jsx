@@ -8,7 +8,8 @@ import './hero.scss'
 const header = ["Rank", "Name", "Price", "24h Change"]
 
 const Hero = () => {
-    const url = 'https://api.coinstats.app/public/v1/coins?skip=0&limit=5';
+    const url = process.env.REACT_APP_URL + '&limit=5';
+    console.log(url)
     const { data, loading } = useFetch(url)
     return (
         <div className="hero">

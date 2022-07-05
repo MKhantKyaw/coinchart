@@ -1,13 +1,13 @@
 @use '../../styles/variables' as var;
 
 .tab {
-    margin: 0 40px;
+    margin: 0 10%;
 
     ul {
         display: flex;
         align-items: center;
-        justify-content: flex-start;
-        gap: 20px;
+        justify-content: center;
+        gap: 10%;
 
         .link {
             text-decoration: none;
