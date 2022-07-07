@@ -1,17 +1,15 @@
 import Article from '../Article/Article';
 import './featured.scss'
-import useFetch from '../../hooks/useFetch'
 import { toDate } from '../../Helpers/timeformat';
-const Featured = () => {
+const Featured = ({ data, type }) => {
 
-    const url = "https://api.coinstats.app/public/v1/news/trending?skip=0&limit=1";
-    const { data } = useFetch(url)
-
-    // console.log(data.news[0])
+    let items = []
+    for (let i = 1; i < data.news.length; i++) {
+        items.push(<Article data={data.news[i]} key={i} />)
+    }
     return (
-        data &&
         <div className="featured">
-            <div className="title">Featured</div>
+            <div className="title">{type === "trending" ? "Featured" : "Latest"}</div>
             <div className="articles">
 
                 <div className="heading">
@@ -24,8 +22,7 @@ const Featured = () => {
                 </div>
 
                 <div className="sidenews">
-                    <Article />
-                    <Article />
+                    {items}
                 </div>
             </div>
         </div>

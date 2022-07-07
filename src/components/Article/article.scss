@@ -3,5 +3,38 @@
 
 
 .article {
-    width: 100px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 0;
+    border-bottom: var.$primary_border;
+    text-decoration: none;
+    color: #000;
+
+    @media (min-width: 900px) {
+        flex-direction: row;
+    }
+
+    img {
+        flex: 1;
+        width: max(100%, calc(50% + 20px));
+        object-fit: cover;
+    }
+
+    .text {
+        flex: 2;
+
+        .date {
+            padding: 10px 0;
+            color: var.$secondary_text;
+            font-size: 12px;
+        }
+
+        .title {
+            font-size: clamp(14px, 3vw, 1.1rem);
+            font-weight: bold;
+        }
+    }
 }

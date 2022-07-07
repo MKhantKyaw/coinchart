@@ -1,8 +1,15 @@
+import { toDate } from '../../Helpers/timeformat';
 import './article.scss'
 
-const Article = () => {
+const Article = ({ data }) => {
     return (
-        <div className="article">Article</div>
+        <a className="article" href={data.link}>
+            <img src={data.imgURL} alt="img" />
+            <div className="text">
+                <p className="date">{toDate(data.feedDate)}</p>
+                <p className="title">{data.title}</p>
+            </div>
+        </a>
     );
 }
 

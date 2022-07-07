@@ -22,9 +22,8 @@ const App = () => {
                             </Route>
 
                             <Route path="news">
-                                <Route index element={<News />} />
-                                <Route path="trending" element={<News />} />
-                                <Route path="latest" element={<News />} />
+                                <Route index element={<News type="trending" />} />
+                                <Route path="latest" element={<News type="latest" />} />
                             </Route>
                         </Route>
                     </Routes>

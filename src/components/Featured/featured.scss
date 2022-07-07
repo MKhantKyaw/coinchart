@@ -3,26 +3,33 @@
 
 
 .featured {
+    margin-top: 30px;
 
     .title {
         @include f.newstitle;
     }
 
     .articles {
-        margin-top: 30px;
+        margin-top: 20px;
         display: flex;
         align-items: center;
-        gap: max(20px, 40px);
+        gap: 40px;
 
-        @media (max-width: var.$breakpoint_tablet) {
+        @media (max-width: 900px) {
             flex-direction: column;
             align-items: flex-start;
+            gap: 10px;
         }
 
         .heading {
             flex: 1.2;
             display: flex;
             flex-direction: column;
+
+            @media(max-width: 900px) {
+                padding-bottom: 30px;
+                border-bottom: var.$primary_border;
+            }
 
             a {
                 text-decoration: none;
@@ -31,6 +38,7 @@
 
             img {
                 width: max(100%, calc(50% + 100px));
+                height: max(calc(70% + 20px), calc(30% + 50px));
                 object-fit: cover;
             }
 
@@ -43,7 +51,7 @@
             .newstitle {
                 color: #000;
                 padding-top: 10px;
-                font-size: clamp(18px, 2vw, 1.7rem);
+                font-size: clamp(18px, 3vw, 1.7rem);
                 font-weight: bold;
             }
 

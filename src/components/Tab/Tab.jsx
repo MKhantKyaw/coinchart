@@ -7,7 +7,6 @@ const Tab = () => {
             <ul>
                 <NavLink to="/news" end className={({ isActive }) => (isActive ? "active link" : "not_active link")}>Featured</NavLink>
                 <NavLink to="/news/latest" className={({ isActive }) => (isActive ? "active link" : "not_active link")}>Latest</NavLink>
-                <NavLink to="/news/ trending" className={({ isActive }) => (isActive ? "active link" : "not_active link")}>Trending</NavLink>
             </ul>
         </div>
     );
