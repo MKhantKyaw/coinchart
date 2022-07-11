@@ -42,6 +42,7 @@
             cursor: pointer;
             color: #000;
             border-bottom: 3px solid transparent;
+            transition: 0.5s;
 
             &:hover {
                 border-bottom: 3px solid variables.$primary_color;

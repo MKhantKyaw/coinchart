@@ -22,7 +22,7 @@ const Navbar = () => {
             <Sidebar />
             <div className="navbar">
                 <Menu className="menu" onClick={handleSidebar} />
-                <div className="title">coinchart</div>
+                <Link to="/" style={{ textDecoration: 'none' }}><div className="title">coinchart</div></Link>
                 <ul className="navitems">
                     <Link to="/" style={{ textDecoration: 'none' }}><li>Home</li></Link>
                     <Link to="/price" style={{ textDecoration: 'none' }}><li>Live Prices</li></Link>

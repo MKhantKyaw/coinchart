@@ -6,10 +6,14 @@ import Price from "./pages/price/Price";
 import News from "./pages/news/News";
 import Footer from './components/Footer/Footer'
 import ScrollToTop from "./Helpers/ScrolltoTop";
+import { useContext } from "react";
+import { DarkModeContext } from "./context/darkModeContext";
+import './dark.scss';
 
 const App = () => {
+    const { dark } = useContext(DarkModeContext)
     return (
-        <div className="app">
+        <div className={dark ? "" : "dark"}>
             <BrowserRouter >
                 <Navbar />
                 <ScrollToTop>

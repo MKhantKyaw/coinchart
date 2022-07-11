@@ -1,0 +1,138 @@
+@use './styles/variables' as var;
+
+$white : #fff;
+
+$back_color: #222;
+
+.dark {
+    background-color: $back_color;
+
+    .navbar {
+        color: $white;
+
+        .title {
+            color: $white;
+        }
+
+        li {
+            color: $white;
+
+            &:hover {
+                border-bottom: 3px solid $white;
+            }
+        }
+    }
+
+    .hero {
+        .title {
+            color: $white;
+        }
+
+        button {
+            background-color: $back_color;
+            border: 1px solid $white;
+        }
+
+        .cards {
+            .card {
+                color: $white;
+                border: 1px solid #a5a5a5;
+
+                &:hover {
+                    transform: translateX(0px) translateY(-10px);
+                }
+            }
+        }
+
+        table {
+            color: $white;
+
+            tbody {
+                tr {
+                    &:hover {
+                        background-color: #111;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .priceChange {
+                &.rise {
+                    color: green;
+                    background-color: transparent;
+                }
+
+                &.decline {
+                    color: red;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+
+    .price {
+        color: $white;
+
+        .datatable {
+            tbody {
+                tr {
+                    &:hover {
+                        background-color: #111;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .priceChange {
+                &.rise {
+                    color: green;
+                    background-color: transparent;
+                }
+
+                &.decline {
+                    color: red;
+                    background-color: transparent;
+                }
+            }
+
+            .tfooter {
+                .pagination {
+                    &.inactive {
+                        background-color: transparent;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+
+    .news {
+        color: $white;
+
+        .tab {
+            .active {
+                color: $white;
+                border-bottom: 3px solid $white;
+            }
+        }
+
+        .featured {
+
+            .articles {
+                .newstitle {
+                    color: $white;
+                }
+
+                .description {
+                    color: $white;
+                }
+            }
+
+            .sidenews {
+                .article {
+                    color: $white;
+                }
+            }
+        }
+    }
+}

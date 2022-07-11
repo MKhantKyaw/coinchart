@@ -12,7 +12,7 @@
     .articles {
         margin-top: 20px;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 40px;
 
         @media (max-width: 900px) {

@@ -9,7 +9,6 @@ const header = ["Rank", "Name", "Price", "24h Change"]
 
 const Hero = () => {
     const url = process.env.REACT_APP_URL + '&limit=5';
-    console.log(url)
     const { data, loading } = useFetch(url)
     return (
         <div className="hero">
